@@ -1,26 +1,10 @@
-import styled from 'styled-components';
-import { Container, Form } from 'reactstrap';
+import styled from "styled-components";
+import { Container, Form, Card } from "reactstrap";
 
 const gray = "#ccc";
 const teal = "#008080";
-// const outline = `2px solid ${gray}`;
-// const tealOutline = `2px solid ${teal}`;
-
-
-export const FormWrapper = styled(Form)`
-    justify-content: flex-end;
-    input.form-control {
-        border-color: ${gray};
-        border-radius: .25rem 0 0 .25rem;
-        border-right-width: 0;
-        width: 350px;
-    }
-    button {
-        background: ${teal};
-        border-radius: 0 .25rem .25rem 0;
-        font-weight: 700;
-    }
-`
+const outline = `2px solid ${gray}`;
+const tealOutline = `2px solid ${teal}`;
 
 export const Wrapper = styled(Container)`
     h1 {
@@ -48,5 +32,66 @@ export const Wrapper = styled(Container)`
     .spinner-border {
         border-color: ${teal};
         border-right-color: transparent;
+    }
+`
+
+export const FormWrapper = styled(Form)`
+    justify-content: flex-end;
+    input.form-control {
+        border-color: ${gray};
+        border-radius: .25rem 0 0 .25rem;
+        border-right-width: 0;
+        width: 350px;
+    }
+    button {
+        background: ${teal};
+        border-radius: 0 .25rem .25rem 0;
+        font-weight: 700;
+    }
+`
+
+export const DayWrapper = styled.section`
+    text-align: center;
+    :hover {
+        cursor: pointer;
+        .card {
+            border-color: ${teal};
+        }
+    }
+    h3 {
+        font-weight: 700;
+    }
+    img {
+        width: 80px;
+    }
+    .card {
+        border: ${({ isSelected }) => isSelected ? tealOutline : outline};
+    }
+    .card-header {
+        background: ${({ isSelected }) => isSelected ? teal : null};
+        border-bottom: ${({ isSelected }) => isSelected ? tealOutline : outline};
+        color: ${({ isSelected }) => isSelected ? "#fff" : null};
+        font-weight: 700;
+    }
+    .card-body {
+        padding: 1.25rem .75rem;
+    }
+`
+
+export const DetailsWrapper = styled(Card)`
+    border: ${tealOutline};
+    padding: 1.5rem;
+    text-align: center;
+    h2 {
+        font-weight: 700;
+    }
+    h3 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-top: .5rem;
+    }
+    img {
+        align-self: center;
+        width: 150px;
     }
 `
