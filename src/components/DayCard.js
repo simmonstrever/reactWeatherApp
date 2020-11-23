@@ -2,18 +2,18 @@ import React from "react";
 import { Col, Card, CardHeader, CardBody } from "reactstrap";
 import { DayWrapper } from "../styles";
 
-const DayCard = () => {
+const DayCard = ({ isSelected, selectDay, day, temp, icon, description, high, low, precip }) => {
     return (
         <Col>
-            <DayWrapper >
+            <DayWrapper isSelected={isSelected} onClick={selectDay}>
                 <Card>
-                    <CardHeader>Card Header</CardHeader>
+                    <CardHeader>{day}</CardHeader>
                     <CardBody>
-                        <h3>69°</h3>
-                        {/* <img  /> */}
-                        <p><strong>High:</strong> 96°</p>
-                        <p><strong>Low:</strong> 43°</p>
-                        <p><strong>Precip:</strong> </p>
+                        <h3>{temp.toFixed(1)}°</h3>
+                        <img src={`${process.env.PUBLIC_URL}/icons/${icon}.png`} alt={description} />
+                        <p><strong>High:</strong> {high.toFixed(1)}°</p>
+                        <p><strong>Low:</strong> {low.toFixed(1)}°</p>
+                        <p><strong>Precip:</strong> {precip}%</p>
                     </CardBody>
                 </Card>
             </DayWrapper>
