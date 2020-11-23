@@ -9,15 +9,11 @@ const App = () => {
     <Wrapper>
       <Row>
         <Col> <SearchBar /></Col>
-        <Col> <h3> Test </h3></Col>
       </Row>
       <Row>
-        <DayCard />
-
+        <Col> </Col>
       </Row>
-      <Row>
-
-      </Row>
+        <DayCard /> 
     </Wrapper>
 
 
